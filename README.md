@@ -1,4 +1,4 @@
-# PyConWorkShop
+# Python ConWorkShop
 An overhaul of [ConWorkShop](https://www.conworkshop.com) based on Django.
 
 ## Usage
