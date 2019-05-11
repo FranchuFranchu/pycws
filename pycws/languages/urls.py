@@ -1,10 +1,10 @@
 from django.urls import path, include, register_converter
 from . import views
-from ..pycws import converters as core_converters
+from . import converters
 
 app_name = 'languages'
 
-register_converter(core_converters.LangCodeConverter, 'lang')
+register_converter(converters.LangCodeConverter, 'lang')
 
 urlpatterns = [
     path('', views.list_langs, name='list-all'),

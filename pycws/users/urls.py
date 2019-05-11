@@ -1,10 +1,10 @@
 from django.urls import path, include, register_converter
 from . import views
-from ..pycws import converters as core_converters
+from . import converters
 
 app_name = 'users'
 
-register_converter(core_converters.UserIDConverter, 'user')
+register_converter(converters.UserIDConverter, 'user')
 
 urlpatterns = [
     path('', views.view_profile, name='view-self'),
