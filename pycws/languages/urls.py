@@ -12,7 +12,7 @@ urlpatterns = [
     path('view/<lang:code>/', include([
         path('', views.view_lang, name='view-lang'),
         path('edit/', views.edit_lang, name='edit-lang'),
-        path('dict/', include('dictionary.urls'),
+        path('dict/', include('dictionary.urls')),
         path('phono/', include([
             path('', views.view_phonology, name='view-phonology'),
             path('edit/', views.edit_phonology, name='edit-phonology')
