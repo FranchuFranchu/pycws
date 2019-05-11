@@ -1,5 +1,7 @@
-# PyConWorkShop
+# Python ConWorkShop
 An overhaul of [ConWorkShop](https://www.conworkshop.com) based on Django.
+
+![test](https://i.ibb.co/mDTPXCT/Untitled.png)
 
 ## Usage
 ```
