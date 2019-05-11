@@ -10,3 +10,6 @@ git clone <link to this repo>
 cd pycws/pycws
 python manage.py runserver
 ```
+
+
+test
