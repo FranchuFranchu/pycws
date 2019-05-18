@@ -20,6 +20,7 @@ from . import views
 urlpatterns = [
     path('', views.feed, name='feed'),
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
     path('articles/', include('articles.urls')),
     path('boards/', include('boards.urls')),
     path('clans/', include('clans.urls')),
