@@ -22,10 +22,10 @@ def delete_word(request, code, lemma, hnum=0):
 def settings(request, code):
     raise Http404
 
-def import(request, code):
+def import_dict(request, code):
     raise Http404
 
-def export(request, code):
+def export_dict(request, code):
     raise Http404
 
 def mass_edit(request, code):
