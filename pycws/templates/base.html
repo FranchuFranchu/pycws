@@ -1,0 +1,33 @@
+{# Base template #}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css" />
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        <div id="page">
+            <header id="page-header">
+
+            </header>
+
+            <section id="page-sidebar">
+
+            </section>
+
+            <main id="page-body">
+                {% block content %}{% endblock %}
+            </main>
+
+            <footer id="page-footer">
+
+            </footer>
+        </div>
+    </body>
+</html>
