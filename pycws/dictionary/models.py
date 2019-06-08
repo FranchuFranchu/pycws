@@ -90,9 +90,9 @@ class Word(models.Model):
     image_link = models.URLField()
 
 class Wordlink(models.Model):
-    linkname = models.TextField()
+    linkname = models.TextField(default='')
     altname = models.TextField(blank=True)
-    hint = models.TextField()
+    hint = models.TextField(default='')
     pos = models.CharField(max_length=4, default='', choices=Word.PARTS_OF_SPEECH)  # To be removed
     addedby = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     islocked = models.BooleanField(default=False)
