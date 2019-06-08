@@ -94,6 +94,6 @@ class Wordlink(models.Model):
     altname = models.TextField(blank=True)
     hint = models.TextField()
     pos = models.CharField(max_length=4, default='', choices=Word.PARTS_OF_SPEECH)  # To be removed
-    addedby = models.ForeignKey(User, on_delete=models.PROTECT)
+    addedby = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     islocked = models.BooleanField(default=False)
     # word_set = reversed ForeignKey
