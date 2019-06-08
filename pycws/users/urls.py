@@ -1,6 +1,6 @@
 from django.urls import path, include, register_converter
 from . import views
-from . import converters
+from pycws import converters
 
 app_name = 'users'
 
