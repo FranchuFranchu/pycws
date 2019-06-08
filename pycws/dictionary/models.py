@@ -1,8 +1,10 @@
 from django.db import models
 from languages.models import Language
+from users.models import User
 
 class Dictionary(models.Model):
     language = models.OneToOneField(Language, on_delete=models.CASCADE)
+    # word_set = reversed ForeignKey
     # Dictionary fields
     enable_gloss = models.BooleanField(default=False)
     enable_alternate_word = models.BooleanField(default=False)
@@ -39,7 +41,6 @@ class Dictionary(models.Model):
         ('hint', 'Hint word'),
         ('note', 'Notes'),
         ('etym', 'Etymology'),
-        ('lang', 'Source language'),
         ('none', 'None')
     ])
     classify_results = models.CharField(max_length=5, default='pos', choices=[
@@ -48,16 +49,12 @@ class Dictionary(models.Model):
         ('both', 'Part of speech and class')
     ])
 
-class Wordlink(models.Model):
-    # Pending
-    pass
-
 class Word(models.Model):
     dictionary = models.ForeignKey(Dictionary, on_delete=models.CASCADE)
     lemma = models.TextField()
     alternative = models.TextField(blank=True)
     gloss = models.TextField(blank=True)
-    wordlink = models.ForeignKey(Wordlink, null=True, on_delete=models.SET_NULL)
+    wordlink = models.ForeignKey('Wordlink', null=True, on_delete=models.SET_NULL)
     PARTS_OF_SPEECH = [
         ('', 'None'),
         ('abbr', 'Abbreviation'),
@@ -91,3 +88,12 @@ class Word(models.Model):
     notes = models.TextField()
     sample = models.TextField()
     image_link = models.URLField()
+
+class Wordlink(models.Model):
+    linkname = models.TextField()
+    altname = models.TextField(blank=True)
+    hint = models.TextField()
+    pos = models.CharField(max_length=4, default='', choices=Word.PARTS_OF_SPEECH)  # To be removed
+    addedby = models.ForeignKey(User, on_delete=models.PROTECT)
+    islocked = models.BooleanField(default=False)
+    # word_set = reversed ForeignKey
