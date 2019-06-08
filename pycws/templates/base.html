@@ -13,20 +13,37 @@
     </head>
     <body>
         <div id="page">
-            <header id="page-header">
-
+            <header id="header">
+                <div id="header-logo">
+                    <span id="header-logo-name">ConWorkShop</span>
+                    <span id="header-logo-words">{{ num_words|default:0 }} total words</span>
+                </div>
+                <nav id="header-navbar">
+                    {# Links go here #}
+                </nav>
+                <div id="header-profile">
+                    {# Profile goes here #}
+                </div>
+                <div id="header-rainbow">
+                    <div id="header-rainbow-green"></div>
+                    <div id="header-rainbow-yellow"></div>
+                    <div id="header-rainbow-blue"></div>
+                    <div id="header-rainbow-orange"></div>
+                    <div id="header-rainbow-purple"></div>
+                    <div id="header-rainbow-red"></div>
+                </div>
             </header>
 
-            <section id="page-sidebar">
-
+            <section id="sidebar">
+                {# Need to decide how I want the sidebar to work #}
             </section>
 
-            <main id="page-body">
+            <main id="main">
                 {% block content %}{% endblock %}
             </main>
 
-            <footer id="page-footer">
-
+            <footer id="footer">
+                {# Need to decide how I want the footer to work #}
             </footer>
         </div>
     </body>

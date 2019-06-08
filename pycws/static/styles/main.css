@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+#header {
+    background-color: #00BCCD;
+    height: 4em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto 12px;
+}
+
+#header-logo {
+
+}
+
+#header-rainbow {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+#header-rainbow-green {
+    background-image: linear-gradient(#33C06B, #1FAC57);
+}
+
+#header-rainbow-yellow {
+    background-image: linear-gradient(#DDD433, #C9C01F);
+}
+
+#header-rainbow-blue {
+    background-image: linear-gradient(#33C9D7, #1FB5C3);
+}
+
+#header-rainbow-orange {
+    background-image: linear-gradient(#FFAE33, #EB9A1F);
+}
+
+#header-rainbow-purple {
+    background-image: linear-gradient(#E633FB, #D21FE7);
+}
+
+#header-rainbow-red {
+    background-image: linear-gradient(#FF4833, #EB341F);
+}
