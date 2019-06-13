@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ] + i18n_patterns(
     path('', views.feed, name='feed'),
-    path('api/', include('api.urls')),
     path('articles/', include('articles.urls')),
     path('boards/', include('boards.urls')),
     path('clans/', include('clans.urls')),
