@@ -1,3 +1,4 @@
+## Responses
 def OK(*data, message='OK.'):
     return {
         'status': 200,
@@ -41,3 +42,23 @@ def BAD_API():
         'message': 'Misconfigured API. Please report this to the CWS staff.',
         'data': []
     }
+
+## Exceptions
+class APIException(Exception):
+    def __init__(self, *args, **kwargs):
+        self.response = self._response(*args, **kwargs)
+
+class BadRequestException(APIException):
+    _response = BAD_REQUEST
+
+class UnauthorisedException(APIException):
+    _response = UNAUTHORISED
+
+class NotFoundException(APIException):
+    _response = NOT_FOUND
+
+class MethodNotAllowedException(APIException):
+    _response = METHOD_NOT_ALLOWED
+
+class BadAPIException(APIException):
+    _response = BAD_API
