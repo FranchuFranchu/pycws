@@ -1,4 +1,5 @@
 import json
+from django.core import exceptions
 from django.http import JsonResponse
 from django.views import View
 from . import serialiser, responses
@@ -26,10 +27,15 @@ class APIModelView(APIView):
     def _getObject(self, **kwargs):
         if self.model is None:
             raise responses.BadAPIException()
+        model = self.model
         try:
-            return self.model.objects.get(**kwargs)
-        except self.model.DoesNotExist:
-            raise responses.NotFoundException(self.model, **kwargs)
+            return model.objects.get(**kwargs)
+        except model.DoesNotExist:
+            raise responses.NotFoundException(model, **kwargs)
+        except model.MultipleObjectsReturns:
+            raise responses.BadAPIException()
+        except exceptions.FieldError:
+            raise responses.BadAPIException()
 
     def get(self, request, **kwargs):
         obj = self._getObject(**kwargs)
