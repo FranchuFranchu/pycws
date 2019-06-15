@@ -49,16 +49,16 @@ class APIException(Exception):
         self.response = self._response(*args, **kwargs)
 
 class BadRequestException(APIException):
-    _response = BAD_REQUEST
+    _response = staticmethod(BAD_REQUEST)
 
 class UnauthorisedException(APIException):
-    _response = UNAUTHORISED
+    _response = staticmethod(UNAUTHORISED)
 
 class NotFoundException(APIException):
-    _response = NOT_FOUND
+    _response = staticmethod(NOT_FOUND)
 
 class MethodNotAllowedException(APIException):
-    _response = METHOD_NOT_ALLOWED
+    _response = staticmethod(METHOD_NOT_ALLOWED)
 
 class BadAPIException(APIException):
-    _response = BAD_API
+    _response = staticmethod(BAD_API)
