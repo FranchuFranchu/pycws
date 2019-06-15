@@ -43,6 +43,13 @@ def BAD_API():
         'data': []
     }
 
+def UNEXPECTED_ERROR(exception):
+    return {
+        'status': 500,
+        'message': f'Caught {exception!r}. Please report this to the CWS staff.',
+        'data': []
+    }
+
 ## Exceptions
 class APIException(Exception):
     def __init__(self, *args, **kwargs):
@@ -62,3 +69,6 @@ class MethodNotAllowedException(APIException):
 
 class BadAPIException(APIException):
     _response = staticmethod(BAD_API)
+
+class UnexpectedErrorException(APIException):
+    _response = staticmethod(UNEXPECTED_ERROR)
