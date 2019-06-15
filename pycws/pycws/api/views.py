@@ -15,7 +15,7 @@ class APIView(View):
             response = e.response
         # except Exception as e:
         #     response = responses.UNEXPECTED_ERROR(e)
-        return JsonResponse(response, encoder=serialiser.CWSJSONEncoder)
+        return JsonResponse(response, encoder=serialiser.APIJSONEncoder)
 
     def http_method_not_allowed(self, request, *args, **kwargs):
         return responses.METHOD_NOT_ALLOWED(request.method, request.path)
