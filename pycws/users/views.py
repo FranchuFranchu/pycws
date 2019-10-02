@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 
-# Create your views here.
+# Create your views here.	
 def view_profile(request, id=''):
     raise Http404
 

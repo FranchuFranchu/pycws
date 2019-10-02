@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{% static 'styles/feed.css' %}" type="text/css" />
+{% endblock %}
+{% block content %}
+	<div id="sidebar">
+		<ul>
+			<li>This person did this</li>
+			<li>This person did that</li>
+		</ul>
+	</div>
+	<div id="not-sidebar">Rest of content goes here</div>
+{% endblock %}

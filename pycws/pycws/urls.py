@@ -19,8 +19,11 @@ from . import views
 
 urlpatterns = [
     path('', views.feed, name='feed'),
+    path('header', views.header, name='header'),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('account/register', views.register, name="register"),
+    path('account/', include('django.contrib.auth.urls')),
     path('articles/', include('articles.urls')),
     path('boards/', include('boards.urls')),
     path('clans/', include('clans.urls')),

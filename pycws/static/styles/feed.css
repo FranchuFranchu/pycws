@@ -1,0 +1,10 @@
+#sidebar {
+	position: absolute;
+	width: 50%;
+	right: 0px;
+}
+#not-sidebar {
+	position: relative;
+	width: 50%;
+	left: 0px;
+}
