@@ -9,7 +9,7 @@ register_converter(converters.LangCodeConverter, 'lang')
 urlpatterns = [
     path('', views.list_langs, name='list-all'),
     path('new/', views.new_lang, name='new-lang'),
-    path('view/<lang:code>/', include([
+    path('view/<code>/', include([
         path('', views.view_lang, name='view-lang'),
         path('edit/', views.edit_lang, name='edit-lang'),
         path('dict/', include('dictionary.urls')),

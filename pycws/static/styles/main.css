@@ -63,24 +63,36 @@ header #sections {
 }
 
 header #sections div {
-	padding: 2px;
+	position: relative;
 }
+
+header #sections div span.header-menu-text {
+    padding: 2px;
+}
+
+
+#language:hover .dropdown {display: block;}
+#tools:hover .dropdown {display: block;}
+#community:hover .dropdown {display: block;}
+#profile:hover .dropdown {display: block;}
+#meta:hover .dropdown {display: block;}
+#logout:hover .dropdown {display: block;}
 
 header #sections div .dropdown {
 	display: none;
-	top: 0px;
+  	z-index: 1;
 	position: absolute;
+    background-color: inherit;
+    border-style: solid solid solid solid;
+    border-width: 1px 1px 0px 1px;
+    width: 100%;
 }
 
 header #sections div .dropdown a {
   color: black;
-  padding: 12px 16px;
+  background-color: inherit;
+  padding: 12px 2px;
   text-decoration: none;
   display: block;
+  border-bottom: 1px solid black;
 }
-#language:hover #language .dropdown {display: block;}
-#tools:hover #tools .dropdown {display: block;}
-#community:hover #community .dropdown {display: block;}
-#profile:hover #profile .dropdown {display: block;}
-#meta:hover #meta .dropdown {display: block;}
-#logout:hover #logout .dropdown {display: block;}

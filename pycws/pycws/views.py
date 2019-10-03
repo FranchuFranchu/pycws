@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, get_list_or_40
 from django.http import Http404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
+from users.models import UserProfile
 
 def feed(request):
     return render(request, 'feed.html')
@@ -17,8 +18,9 @@ def register(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
+            UserProfile.objects.create(user=user).save()
             login(request, user)
-            return redirect('')
+            return redirect('/')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})

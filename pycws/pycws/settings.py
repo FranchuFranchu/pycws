@@ -90,6 +90,9 @@ DATABASES = {
     }
 }
 
+# Profile storing the user data
+# https://stackoverflow.com/questions/6085025/django-user-profile#6092091
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
