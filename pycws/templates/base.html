@@ -24,67 +24,7 @@
         <div id="page">
             
             <header>
-                <div id="conworkshop-text-label">Conworkshop</div>
-                <div id="sections">
-                    <div id="language">
-                        <span class="header-menu-text">Language</span>
-                        <div class="dropdown">
-                            <cws-link href="/langs/">List</cws-link>
-                            <cws-link href="/langs/new">New</cws-link>
-                            <cws-link href="#">link3</cws-link>
-                        </div>
-                    </div>
-                    <div id="tools">
-                        <span class="header-menu-text">Tools</span>
-                        <div class="dropdown">
-                            <cws-link href="#">link1</cws-link>
-                            <cws-link href="#">link2</cws-link>
-                            <cws-link href="#">link3</cws-link>
-                        </div>
-                    </div>
-                    <div id="community">
-                        <span class="header-menu-text">Community</span>
-                        <div class="dropdown">
-                            <cws-link href="#">link1</cws-link>
-                            <cws-link href="#">link2</cws-link>
-                            <cws-link href="#">link3</cws-link>
-                        </div>
-                    </div>
-                    <div id="meta">
-                        <span class="header-menu-text">Meta</span>
-                        <div class="dropdown">
-                            <cws-link href="#">link1</cws-link>
-                            <cws-link href="#">link2</cws-link>
-                            <cws-link href="#">link3</cws-link>
-                        </div>
-                    </div>
-                    {% if user.is_authenticated %}
-                        <div id="profile">
-                            <span class="header-menu-text">Profile</span>
-                            <div class="dropdown">
-                                <cws-link href="#">link1</cws-link>
-                                <cws-link href="#">link2</cws-link>
-                                <cws-link href="#">link3</cws-link>
-                            </div>
-                        </div>
-                        <cws-link href="/account/logout">
-                            <div id="logout">
-                                Logout
-                            </div>
-                        </cws-link>
-                    {% else %}
-                        <cws-link href="/account/register">
-                            <div id="register">
-                                Register
-                            </div>
-                        </cws-link>
-                        <cws-link href="/account/login">
-                            <div id="login">
-                                Login
-                            </div>
-                        </cws-link>
-                    {% endif %}
-                </div>
+                <x-frame src="/header"></x-frame>
             </header>
 
             <section id="page-sidebar">

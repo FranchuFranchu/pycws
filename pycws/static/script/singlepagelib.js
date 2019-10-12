@@ -25,7 +25,7 @@ function getText(location) {
 }
 
 function changeView(location) {
-  console.log(location)
+  refreshHeader()
   if(location == '#') {
     return
   }
@@ -35,6 +35,11 @@ function changeView(location) {
   $('#mainView').attr('src', location)
   window.history.pushState(location, '', '#' + location);
   $('#mainView')[0].refresh()
+}
+
+function refreshHeader() {
+  $('header > x-frame')[0].refresh()
+
 }
 
 class ExternalIframe extends HTMLElement {
