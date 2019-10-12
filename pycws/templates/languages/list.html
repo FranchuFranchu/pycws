@@ -1,13 +1,7 @@
-{% extends "base.html" %}
-{% load static %}
-{% block stylesheets %}
-{% endblock %}
-{% block title %}Conworkshop | List languages{% endblock %}
-{% block content %}
-    <ul>
-        {% for lang in langs %}
-            <li><a href="/langs/view/{{lang.code}}">{{lang.name}}</a></li>
-        {% endfor %}
 
-    </ul>
-{% endblock %}
+<ul>
+    {% for lang in langs %}
+        <li><cws-link href="/langs/view/{{lang.code}}">{{lang.name}}</cws-link></li>
+    {% endfor %}
+
+</ul>

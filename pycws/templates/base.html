@@ -7,8 +7,17 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
+
         <link rel="stylesheet" href="{% static 'styles/main.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'styles/header.css' %}" type="text/css" />
         {% block stylesheets %}{% endblock %}
+
+        <script
+              src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'script/singlepagelib.js' %}"></script>
+        <script type="text/javascript" src="{% static 'script/main.js' %}"></script>
         {% block javascripts %}{% endblock %}
     </head>
     <body>
@@ -20,62 +29,60 @@
                     <div id="language">
                         <span class="header-menu-text">Language</span>
                         <div class="dropdown">
-                            <a href="/langs/">List</a>
-                            <a href="#">link2</a>
-                            <a href="#">link3</a>
+                            <cws-link href="/langs/">List</cws-link>
+                            <cws-link href="/langs/new">New</cws-link>
+                            <cws-link href="#">link3</cws-link>
                         </div>
                     </div>
                     <div id="tools">
                         <span class="header-menu-text">Tools</span>
                         <div class="dropdown">
-                            <a href="#">link1</a>
-                            <a href="#">link2</a>
-                            <a href="#">link3</a>
+                            <cws-link href="#">link1</cws-link>
+                            <cws-link href="#">link2</cws-link>
+                            <cws-link href="#">link3</cws-link>
                         </div>
                     </div>
                     <div id="community">
                         <span class="header-menu-text">Community</span>
                         <div class="dropdown">
-                            <a href="#">link1</a>
-                            <a href="#">link2</a>
-                            <a href="#">link3</a>
+                            <cws-link href="#">link1</cws-link>
+                            <cws-link href="#">link2</cws-link>
+                            <cws-link href="#">link3</cws-link>
                         </div>
                     </div>
                     <div id="meta">
                         <span class="header-menu-text">Meta</span>
                         <div class="dropdown">
-                            <a href="#">link1</a>
-                            <a href="#">link2</a>
-                            <a href="#">link3</a>
+                            <cws-link href="#">link1</cws-link>
+                            <cws-link href="#">link2</cws-link>
+                            <cws-link href="#">link3</cws-link>
                         </div>
                     </div>
                     {% if user.is_authenticated %}
-                        <div id="profile">Profile
+                        <div id="profile">
+                            <span class="header-menu-text">Profile</span>
                             <div class="dropdown">
-                                <a href="#">link1</a>
-                                <a href="#">link2</a>
-                                <a href="#">link3</a>
+                                <cws-link href="#">link1</cws-link>
+                                <cws-link href="#">link2</cws-link>
+                                <cws-link href="#">link3</cws-link>
                             </div>
                         </div>
-                    {% else %}
-                        <a href="/account/register">
-                            <div id="register">
-                                Register
-                            </div>
-                        </a>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <a href="/account/logout">
+                        <cws-link href="/account/logout">
                             <div id="logout">
                                 Logout
                             </div>
-                        </a>
+                        </cws-link>
                     {% else %}
-                        <a href="/account/login">
+                        <cws-link href="/account/register">
+                            <div id="register">
+                                Register
+                            </div>
+                        </cws-link>
+                        <cws-link href="/account/login">
                             <div id="login">
                                 Login
                             </div>
-                        </a>
+                        </cws-link>
                     {% endif %}
                 </div>
             </header>

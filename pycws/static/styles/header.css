@@ -1,0 +1,92 @@
+
+header {
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: #CCFFCC;
+}
+
+header #sections cws-link {
+    /* Remove default link style in header buttons*/
+    color: inherit; 
+    text-decoration: inherit;
+}
+
+#conworkshop-text-label {
+    text-align: center;
+    padding: 6px;
+}
+
+header #language {
+    background-color: #3CC47C;
+}
+
+header #tools {
+    background-color: #E3A222;
+}
+
+header #community {
+    background-color: #4ABDAC;
+}
+
+header #profile {
+    background-color: #E37222;
+}
+
+header #meta {
+    background-color: #DDDDDD;
+}
+
+header #logout {
+    background-color: #FF0000;
+}
+
+header #login {
+    background-color: #4e4c67;
+    color: white;
+}
+
+header #register {
+    background-color: #697777; /* Nice */
+}
+header #sections {
+    width: 100%
+    height: 2em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+header #sections div {
+    position: relative;
+}
+
+header #sections div span.header-menu-text {
+    padding: 2px;
+    cursor: default;
+}
+
+
+#language:hover .dropdown {display: block;}
+#tools:hover .dropdown {display: block;}
+#community:hover .dropdown {display: block;}
+#profile:hover .dropdown {display: block;}
+#meta:hover .dropdown {display: block;}
+#logout:hover .dropdown {display: block;}
+
+header #sections div .dropdown {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background-color: inherit;
+    border-style: solid solid solid solid;
+    border-width: 1px 1px 0px 1px;
+    width: 100%;
+}
+
+header #sections div .dropdown cws-link {
+  color: black;
+  background-color: inherit;
+  padding: 12px 2px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid black;
+}

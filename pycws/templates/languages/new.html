@@ -1,13 +1,7 @@
-{% extends "base.html" %}
-{% load static %}
-{% block stylesheets %}
-{% endblock %}
-{% block title %}Conworkshop | New language{% endblock %}
-{% block content %}
-    <h1>New language</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
-{% endblock %}
+
+<h1>New language</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
